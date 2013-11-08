@@ -8,3 +8,18 @@
   <strong>Description</strong>
   <%=  @rest.description %>
 </p>
+
+<p>
+  <strong>address</strong>
+  <%=  @rest.address %>
+</p>
+
+<p>
+  <strong>phone number</strong>
+  <%=  @rest.phone_number %>
+</p>
+
+<%= link_to 'Back', rests_path %>
+<%= link_to 'Edit', edit_rest_path(@rest) %>
+<%= link_to 'Destroy', rest_path(@rest),
+                    method: :delete, data: { confirm: 'Are you sure?' } %></td>

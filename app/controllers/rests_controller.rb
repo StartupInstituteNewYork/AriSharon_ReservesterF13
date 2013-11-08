@@ -27,9 +27,20 @@ class RestsController < ApplicationController
   end
 
   def update
+    @rest = Rest.find(params[:id])
+ 
+    #if @rest.update(params[:rest].permit(:name, :description, :address))
+       if @rest.update(rest_params)
+          redirect_to @rest
+        else
+          render 'edit'
+    end
   end
 
   def destroy
+    @rest = Rest.find(params[:id])
+    @rest.destroy
+    redirect_to root_url, alert: "#{@rest.name} was successfully deleted!"
   end
 
   private

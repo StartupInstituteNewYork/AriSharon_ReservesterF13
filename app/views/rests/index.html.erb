@@ -2,18 +2,21 @@
 
 <h1>Listing rests</h1>
  
-  <%= link_to 'New rest', new_rest_path %>
+  <%= link_to 'Add Restaurant', new_rest_path %>
   
 <table>
   <tr>
-    <th>Title</th>
-    <th>Text</th>
+    <th>Name</th>
+    <th>Description</th>
   </tr>
  
   <% @rests.each do |rest| %>
     <tr>
       <td><%= rest.name %></td>
       <td><%= rest.description %></td>
+      <td><%= link_to 'Show', rest %></td>
+      <td><%= link_to 'Edit', edit_rest_path(rest) %></td>
+
     </tr>
   <% end %>
 
