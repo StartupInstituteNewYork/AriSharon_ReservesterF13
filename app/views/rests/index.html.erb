@@ -1,0 +1,21 @@
+
+
+<h1>Listing rests</h1>
+ 
+  <%= link_to 'New rest', new_rest_path %>
+  
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Text</th>
+  </tr>
+ 
+  <% @rests.each do |rest| %>
+    <tr>
+      <td><%= rest.name %></td>
+      <td><%= rest.description %></td>
+    </tr>
+  <% end %>
+
+
+</table>
