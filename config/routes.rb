@@ -1,4 +1,7 @@
 Restaurant::Application.routes.draw do
+  
+  root 'welcome#index'
+  #get "welcome/index"
   #get "restaurants/index"
   #get "restaurants/show"
   #get "restaurants/new"
@@ -8,11 +11,13 @@ Restaurant::Application.routes.draw do
   #get "restaurants/destroy"
   resources :rests
 
+  match '/contact', to: 'welcome#contact', via: 'get'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
-  # You can have the root of your site routed with "root"
-  root 'rests#index'
+  
+  
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
