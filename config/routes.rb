@@ -13,6 +13,7 @@ Restaurant::Application.routes.draw do
   resources :rests
 
   match '/contact', to: 'welcome#contact', via: 'get'
+  match '/signup', to: 'welcome#signup', via: 'get'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
