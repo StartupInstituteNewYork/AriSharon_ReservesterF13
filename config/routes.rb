@@ -1,5 +1,6 @@
 Restaurant::Application.routes.draw do
   
+  devise_for :owners
   root 'welcome#index'
   #get "welcome/index"
   #get "restaurants/index"
