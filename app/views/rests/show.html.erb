@@ -1,25 +1,36 @@
 
+<h5>
+	<strong>Name:</strong>
+	<%= @rest.name %>
+</h5>
+
 <p>
-  <strong>Name:</strong>
-  <%= @rest.name %>
-</p>
- 
-<p>
-  <strong>Description</strong>
-  <%=  @rest.description %>
+	<strong>Description:</strong>
+	<%=  @rest.description %>
 </p>
 
 <p>
-  <strong>address</strong>
-  <%=  @rest.address %>
+	<strong>Address:</strong>
+	<%=  @rest.address %>
 </p>
 
 <p>
-  <strong>phone number</strong>
-  <%=  @rest.phone_number %>
+	<strong>Phone number:</strong>
+	<%=  @rest.phone_number %>
 </p>
 
-<%= link_to 'Back', rests_path %>
-<%= link_to 'Edit', edit_rest_path(@rest) %>
-<%= link_to 'Destroy', rest_path(@rest),
-                    method: :delete, data: { confirm: 'Are you sure?' } %></td>
+<p>
+	<%# if @rest.owner != nil%>
+    	<strong>Owner: </strong>
+	   <%= @rest.owner.name %>
+	   <% logger.debug "rest: #{@rest.attributes.inspect}" %>
+</p>
+
+<% if owner_signed_in? %>
+	<%if current_owner.owns?(@rest) %>
+		<%= link_to 'Edit', edit_rest_path(@rest) %>
+		<%= link_to 'Destroy', rest_path(@rest),
+					method: :delete, data: { confirm: 'Are you sure?' } %>
+	<% end %>
+<% end %>
+<%= link_to 'Back', rests_path %>                    

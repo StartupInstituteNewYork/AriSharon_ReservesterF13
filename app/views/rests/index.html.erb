@@ -1,7 +1,9 @@
 
-<h1>Listing rests</h1>
+<h1>Restaurants</h1>
 
+<% if owner_signed_in? %>
 <%= link_to 'Add Restaurant', new_rest_path, class: "btn " %>
+<% end %>
 
 <table class="table table-striped">
   <tr>
@@ -14,8 +16,6 @@
     <td><%= rest.name %></td>
     <td><%= rest.description %></td>
     <td><%= link_to 'Show', rest %></td>
-    <td><%= link_to 'Edit', edit_rest_path(rest) %></td>
-
   </tr>
   <% end %>
 

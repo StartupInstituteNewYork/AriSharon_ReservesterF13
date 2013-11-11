@@ -1,4 +1,7 @@
 class RestsController < ApplicationController
+  before_action :authenticate_owner!, only: [:new, :create, :edit, :update, :destroy]
+  before_action :confirm_ownership, only: [:edit, :update, :destroy]
+
   def index
      @rests = Rest.all
   end
@@ -13,7 +16,9 @@ class RestsController < ApplicationController
   end
 
   def create
-     @rest = Rest.new(rest_params)
+    # @rest = Rest.new(rest_params)
+    
+      @rest = current_owner.rests.build(rest_params)
      if @rest.save
       redirect_to root_url, notice: "#{@rest.name} was successfully created!"
      else

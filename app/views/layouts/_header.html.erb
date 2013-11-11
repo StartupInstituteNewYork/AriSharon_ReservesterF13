@@ -4,9 +4,16 @@
       <%= link_to "NYC Restaurants", root_path, id: "logo" %>
       <nav>
         <ul class="nav pull-right">
-          <li><%= link_to "Home",    '#' %></li>
-          <li><%= link_to "Help",    '#' %></li>
-          <li><%= link_to "Sign in", '#' %></li>
+         <!-- <li><%#= link_to "Home",    '#' %></li>
+          <li><%#= link_to "Help",    '#' %></li> -->
+          <% if owner_signed_in? %>
+          <p id = "signin" > Signed in as <%= current_owner.email %> </p>
+          <%= link_to "Sign out", destroy_owner_session_path, :method => :delete %>
+          <% else %>
+          <%= link_to "Sign up", new_owner_registration_path %> or
+          <%= link_to "Sign in", new_owner_session_path %>
+          <% end %>
+          <li><%#= link_to "Sign in", new_owner_session_path %></li>
         </ul>
       </nav>
     </div>
