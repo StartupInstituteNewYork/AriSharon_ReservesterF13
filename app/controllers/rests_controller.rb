@@ -1,6 +1,6 @@
 class RestsController < ApplicationController
-  before_action :authenticate_owner!, only: [:new, :create, :edit, :update, :destroy]
-  before_action :confirm_ownership, only: [:edit, :update, :destroy]
+  #before_action :authenticate_owner!, only: [:new, :create, :edit, :update, :destroy]
+  #before_action :confirm_ownership, only: [:edit, :update, :destroy]
 
   def index
      @rests = Rest.all

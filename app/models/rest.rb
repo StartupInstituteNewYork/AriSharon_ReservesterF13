@@ -3,4 +3,5 @@ class Rest < ActiveRecord::Base
 	validates :name, :address, presence: true
 	validates :name, length: { minimum: 3 }
 	validates :name, uniqueness: { case_sensitive: false }
+	mount_uploader :image, ImageUploader
 end
