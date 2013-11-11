@@ -26,7 +26,8 @@
 	   <% logger.debug "rest: #{@rest.attributes.inspect}" %>
 </p>
 
-<%= image_tag @rest.image_url %>
+<%#= image_tag @rest.image_url %>
+<%= image_tag @rest.image_url(:thumb) if @rest.image? %>
 
 <% if owner_signed_in? %>
 	<%if current_owner.owns?(@rest) %>

@@ -7,6 +7,8 @@ gem 'bootstrap-sass', '2.3.2.0'
 gem 'haml'
 gem 'devise'
 gem 'carrierwave'
+gem 'rmagick'
+
 
 group :development, :test do
  gem 'better_errors'

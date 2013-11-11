@@ -51,7 +51,7 @@ class RestsController < ApplicationController
   private
 
   def rest_params
-    params.require(:rest).permit(:name, :description, :address, :phone_number)
+    params.require(:rest).permit(:name, :description, :address, :phone_number, :image)
   end
 
 end
