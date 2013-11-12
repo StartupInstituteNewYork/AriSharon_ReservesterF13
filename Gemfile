@@ -8,6 +8,10 @@ gem 'haml'
 gem 'devise'
 gem 'carrierwave'
 gem 'rmagick'
+gem 'fog'
+gem 'unf'
+#gem "nokogiri", "~> 1.5.0"
+
 
 
 group :development, :test do
@@ -39,4 +43,5 @@ end
 group :production do
   gem 'pg', '0.15.1'
   gem 'rails_12factor', '0.0.2'
+  
 end
