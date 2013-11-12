@@ -14,6 +14,7 @@ group :development, :test do
  gem 'better_errors'
  gem 'binding_of_caller'
  gem 'meta_request'
+ #gem 'mysql2'
  gem 'sqlite3', '1.3.8'
  gem 'rspec-rails', '2.13.1'
  gem 'debugger'
