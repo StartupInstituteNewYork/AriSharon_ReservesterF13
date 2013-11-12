@@ -6,6 +6,13 @@ gem 'rails', '4.0.0'
 gem 'bootstrap-sass', '2.3.2.0'
 gem 'haml'
 gem 'devise'
+gem 'carrierwave'
+gem 'rmagick'
+gem 'fog'
+gem 'unf'
+#gem "nokogiri", "~> 1.5.0"
+
+
 
 group :development, :test do
  gem 'better_errors'
@@ -36,4 +43,5 @@ end
 group :production do
   gem 'pg', '0.15.1'
   gem 'rails_12factor', '0.0.2'
+  
 end

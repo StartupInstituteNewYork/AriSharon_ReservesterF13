@@ -1,6 +1,6 @@
 class RestsController < ApplicationController
-  before_action :authenticate_owner!, only: [:new, :create, :edit, :update, :destroy]
-  before_action :confirm_ownership, only: [:edit, :update, :destroy]
+  #before_action :authenticate_owner!, only: [:new, :create, :edit, :update, :destroy]
+  #before_action :confirm_ownership, only: [:edit, :update, :destroy]
 
   def index
      @rests = Rest.all
@@ -51,7 +51,7 @@ class RestsController < ApplicationController
   private
 
   def rest_params
-    params.require(:rest).permit(:name, :description, :address, :phone_number)
+    params.require(:rest).permit(:name, :description, :address, :phone_number, :image)
   end
 
 end
