@@ -21,9 +21,11 @@
 
 <p>
 	<%# if @rest.owner != nil%>
+	<% if @rest.owner != nil%>
     	<strong>Owner: </strong>
 	   <%= @rest.owner.name %>
 	   <% logger.debug "rest: #{@rest.attributes.inspect}" %>
+	 <%end%>
 </p>
 
 <% if owner_signed_in? %>
