@@ -10,7 +10,7 @@ gem 'carrierwave'
 gem 'rmagick'
 gem 'fog'
 gem 'unf'
-gem 'aws-sdk'
+#gem 'aws-sdk'
 #gem "nokogiri", "~> 1.5.0"
 
 
